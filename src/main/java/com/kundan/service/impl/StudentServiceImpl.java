@@ -1,14 +1,18 @@
 package com.kundan.service.impl;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
+import com.kundan.exception.ResourceNotFoundException;
 import com.kundan.model.Student;
 import com.kundan.repository.StudentRepository;
 import com.kundan.service.StudentService;
+import com.kundan.util.StudentUtil;
 
 @Service
 public class StudentServiceImpl implements StudentService {
@@ -16,24 +20,37 @@ public class StudentServiceImpl implements StudentService {
 	@Autowired
 	private StudentRepository studentRepository;
 	
+	@Autowired 
+	private StudentUtil studentUtil;
+	
 	@Override
 	public Integer saveStudent(Student student) {
 		return studentRepository.save(student).getStudentId();
 	}
 
 	@Override
-	public void updateStudent(Student student) {
-		studentRepository.save(student);
+	@CachePut(value = "student", key ="#studentId")
+	public void updateStudent(Integer studentId,Student student) {
+		Student actualStudent = studentRepository.findById(studentId)
+				.orElseThrow(()-> new ResourceNotFoundException("Student Not Exist"));
+		studentUtil.mapToActualObject(actualStudent,student);
+		studentRepository.save(actualStudent);
 	}
 
 	@Override
+	@CacheEvict(value = "student", key ="#studentId")
 	public void deleteStudent(Integer studentId) {
-		studentRepository.deleteById(studentId);
+		Student student = studentRepository.findById(studentId)
+				.orElseThrow(()-> new ResourceNotFoundException("Student Not Exist"));
+		studentRepository.delete(student);
 	}
 
 	@Override
-	public Optional<Student> getOneStudent(Integer studentId) {
-		return studentRepository.findById(studentId) ;
+	@Cacheable(value = "student", key ="#studentId")
+	public Student getOneStudent(Integer studentId) {
+		Student student = studentRepository.findById(studentId)
+				.orElseThrow(()-> new ResourceNotFoundException("Student Not Exist"));
+		return student ;
 	}
 
 	@Override
@@ -41,8 +58,4 @@ public class StudentServiceImpl implements StudentService {
 		return studentRepository.findAll();
 	}
 
-	@Override
-	public boolean isStudentExist(Integer studentId) {
-		return studentRepository.existsById(studentId);
-	}
 }

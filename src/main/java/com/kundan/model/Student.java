@@ -1,10 +1,13 @@
 package com.kundan.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,8 +18,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 @Table(name = "student")
-public class Student {
+public class Student implements Serializable{
 	
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4143413597480394738L;
+
 	@Id
 	@GeneratedValue
 	@Column(name = "student_id")

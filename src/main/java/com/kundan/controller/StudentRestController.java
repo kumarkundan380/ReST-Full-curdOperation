@@ -1,8 +1,6 @@
 package com.kundan.controller;
 
 import java.util.List;
-import java.util.Optional;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,10 +14,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.kundan.model.Student;
 import com.kundan.service.StudentService;
-import com.kundan.util.StudentUtil;
 
 @RestController
 @RequestMapping("/student")
@@ -29,9 +25,6 @@ private static final Logger LOGGER = LoggerFactory.getLogger(StudentRestControll
 	
 	@Autowired
 	private StudentService studentService;
-	
-	@Autowired 
-	private StudentUtil studentUtil;
 	
 	/**
 	 * 1. Read JSON(Student) and convert to Object Format
@@ -96,16 +89,16 @@ private static final Logger LOGGER = LoggerFactory.getLogger(StudentRestControll
 		LOGGER.info("Entered into getOneStudent method");
 		ResponseEntity<?> response = null;
 		try {
-			LOGGER.info("About to make service call to fetch one record");
-			Optional<Student> optionalStudent = studentService.getOneStudent(studentId);
-			if(optionalStudent.isPresent()) {
-				LOGGER.info("Student exist=>"+studentId);
-				//response = new ResponseEntity<Student>(optionalStudent.get(),HttpStatus.OK);
-				response = ResponseEntity.ok(optionalStudent.get());
-			} else {
-				LOGGER.warn("Given student id not exist=>"+studentId);
-				response = new ResponseEntity<String>("Student '"+studentId+"' not exist",HttpStatus.BAD_REQUEST);
-			}
+			LOGGER.info("About to make service call to fetch one record with Student Id: "+ studentId);
+			Student student = studentService.getOneStudent(studentId);
+			response = ResponseEntity.ok(student);
+				
+//			Link link = WebMvcLinkBuilder.linkTo(
+//						WebMvcLinkBuilder.methodOn(StudentRestController.class)
+//						.getAllStudents())
+//						.withRel("All Books");
+//			student.add(link);
+
 		} catch(Exception e) {
 			LOGGER.error("Unable to process request fetch:"+e.getMessage());
 			response = new ResponseEntity<String>("Unable to process student fetch",HttpStatus.INTERNAL_SERVER_ERROR);
@@ -125,15 +118,10 @@ private static final Logger LOGGER = LoggerFactory.getLogger(StudentRestControll
 		LOGGER.info("Enterd in removeStudent method");
 		ResponseEntity<String> response = null;
 		try {
-			LOGGER.info("About to make service call for data check");
-			if(studentService.isStudentExist(studentId)) {
-				studentService.deleteStudent(studentId);
-				LOGGER.info("Student exist with given id and deleted=>"+studentId);
-				response = new ResponseEntity<String>("Student '"+studentId+"' Deleted",HttpStatus.OK);
-			} else {
-				LOGGER.warn("Given Student id not exist=>"+studentId);
-				response = new ResponseEntity<String>("Student '"+studentId+"' not exixt",HttpStatus.BAD_REQUEST);
-			}
+			LOGGER.info("About to make service call for deleting Student");
+			studentService.deleteStudent(studentId);
+			LOGGER.info("Student deleted with Student Id:=>"+studentId);
+			response = new ResponseEntity<String>("Student '"+studentId+"' Deleted",HttpStatus.OK);
 		} catch(Exception e) {
 			LOGGER.error("Unable to perform delete Operation =>"+e.getMessage());
 			response = new ResponseEntity<String>("Unable to delete",HttpStatus.INTERNAL_SERVER_ERROR);
@@ -153,18 +141,10 @@ private static final Logger LOGGER = LoggerFactory.getLogger(StudentRestControll
 		LOGGER.info("Enterd in updateStudent method");
 		ResponseEntity<String> response = null;
 		try {
-			LOGGER.info("About to make service call for data check");
-			Optional<Student> optStudent = studentService.getOneStudent(studentId);
-			if(optStudent.isPresent()) {
-				Student actualStudent = optStudent.get();
-				studentUtil.mapToActualObject(actualStudent,student);
-				studentService.updateStudent(actualStudent);
-				LOGGER.info("Student exist with given id and updated=>"+studentId);
-				response = new ResponseEntity<String>("Student '"+studentId+"' Updated",HttpStatus.RESET_CONTENT);
-			} else {
-				LOGGER.warn("Given Student id not exist=>"+studentId);
-				response = new ResponseEntity<String>("Student '"+studentId+"' not exist",HttpStatus.BAD_REQUEST);
-			}
+			studentService.updateStudent(studentId,student);
+			LOGGER.info("Student exist with given id=>"+studentId);
+			response = new ResponseEntity<String>("Student '"+studentId+"' Updated",HttpStatus.RESET_CONTENT);
+			LOGGER.info("Student updated with given id=>"+studentId);
 		} catch (Exception e) {
 			LOGGER.error("Unable to perform update Operation =>"+e.getMessage());
 			response = new ResponseEntity<String>("Unable to update",HttpStatus.INTERNAL_SERVER_ERROR);
