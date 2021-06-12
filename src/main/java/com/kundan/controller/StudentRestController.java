@@ -85,7 +85,7 @@ private static final Logger LOGGER = LoggerFactory.getLogger(StudentRestControll
 	 * else provide message(String)
 	 */
 	@GetMapping("/one/{studentId}")
-	public ResponseEntity<?> getOneStudent(@PathVariable Integer studentId) {
+	public ResponseEntity<?> getOneStudent(@PathVariable(value = "studentId") Integer studentId) {
 		LOGGER.info("Entered into getOneStudent method");
 		ResponseEntity<?> response = null;
 		try {

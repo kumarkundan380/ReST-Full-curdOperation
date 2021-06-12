@@ -1,0 +1,392 @@
+12--06--2021 09:00:20 315 INFO org.springframework.boot.StartupInfoLogger logStarting Starting ReStFullCurdOperationApplication using Java 15.0.2 on kundan-HP-Pavilion-15-NoteBook-PC with PID 6236 (/home/kundan/SpringBoot/ReST-Full-curdOperation/target/classes started by kundan in /home/kundan/SpringBoot/ReST-Full-curdOperation) 
+12--06--2021 09:00:20 357 DEBUG org.springframework.boot.StartupInfoLogger logStarting Running with Spring Boot v2.4.5, Spring v5.3.6 
+12--06--2021 09:00:20 359 INFO org.springframework.boot.SpringApplication logStartupProfileInfo No active profile set, falling back to default profiles: default 
+12--06--2021 09:00:24 244 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate multipleStoresDetected Multiple Spring Data modules found, entering strict repository configuration mode! 
+12--06--2021 09:00:24 260 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate registerRepositoriesIn Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+12--06--2021 09:00:24 661 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate registerRepositoriesIn Finished Spring Data repository scanning in 393 ms. Found 1 JPA repository interfaces. 
+12--06--2021 09:00:24 719 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate multipleStoresDetected Multiple Spring Data modules found, entering strict repository configuration mode! 
+12--06--2021 09:00:24 722 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate registerRepositoriesIn Bootstrapping Spring Data Redis repositories in DEFAULT mode. 
+12--06--2021 09:00:24 767 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport isStrictRepositoryCandidate Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.kundan.repository.StudentRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository. 
+12--06--2021 09:00:24 769 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate registerRepositoriesIn Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces. 
+12--06--2021 09:00:25 778 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer initialize Tomcat initialized with port(s): 9090 (http) 
+12--06--2021 09:00:25 811 INFO org.apache.juli.logging.DirectJDKLog log Starting service [Tomcat] 
+12--06--2021 09:00:25 812 INFO org.apache.juli.logging.DirectJDKLog log Starting Servlet engine: [Apache Tomcat/9.0.45] 
+12--06--2021 09:00:25 931 INFO org.apache.juli.logging.DirectJDKLog log Initializing Spring embedded WebApplicationContext 
+12--06--2021 09:00:25 932 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext prepareWebApplicationContext Root WebApplicationContext: initialization completed in 5272 ms 
+12--06--2021 09:00:27 418 INFO org.hibernate.jpa.internal.util.LogHelper logPersistenceUnitInformation HHH000204: Processing PersistenceUnitInfo [name: default] 
+12--06--2021 09:00:27 668 INFO org.hibernate.Version logVersion HHH000412: Hibernate ORM core version 5.4.30.Final 
+12--06--2021 09:00:28 041 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager <clinit> HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+12--06--2021 09:00:28 415 INFO com.zaxxer.hikari.HikariDataSource getConnection HikariPool-1 - Starting... 
+12--06--2021 09:00:28 934 INFO com.zaxxer.hikari.HikariDataSource getConnection HikariPool-1 - Start completed. 
+12--06--2021 09:00:29 030 INFO org.hibernate.dialect.Dialect <init> HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect 
+12--06--2021 09:00:30 122 WARN org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl handleException GenerationTarget encountered exception accepting command : Error executing DDL "alter table address drop foreign key FKmm28k3iovnkclfb0kiuq3cbat" via JDBC Statement 
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table address drop foreign key FKmm28k3iovnkclfb0kiuq3cbat" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:359)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:331)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:230)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:154)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:126)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:112)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:145)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:318)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:468)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1845)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:782)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:774)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:339)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1340)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329)
+	at com.kundan.ReStFullCurdOperationApplication.main(ReStFullCurdOperationApplication.java:12)
+Caused by: java.sql.SQLSyntaxErrorException: Table 'student_app.address' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:762)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:646)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 36 common frames omitted
+12--06--2021 09:00:35 427 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator initiateService HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+12--06--2021 09:00:35 475 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean buildNativeEntityManagerFactory Initialized JPA EntityManagerFactory for persistence unit 'default' 
+12--06--2021 09:00:36 221 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration openEntityManagerInViewInterceptor spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+12--06--2021 09:00:36 538 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver <init> Exposing 14 endpoint(s) beneath base path '/actuator' 
+12--06--2021 09:00:36 741 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping initHandlerMethods Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)] 
+12--06--2021 09:00:36 873 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport initialize Initializing ExecutorService 'applicationTaskExecutor' 
+12--06--2021 09:00:37 324 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer start Tomcat started on port(s): 9090 (http) with context path '' 
+12--06--2021 09:00:37 325 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper start Context refreshed 
+12--06--2021 09:00:37 377 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper start Found 1 custom documentation plugin(s) 
+12--06--2021 09:00:37 466 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner scan Scanning for api listing references 
+12--06--2021 09:00:37 609 INFO org.springframework.boot.StartupInfoLogger logStarted Started ReStFullCurdOperationApplication in 18.572 seconds (JVM running for 29.3) 
+12--06--2021 09:00:40 971 INFO org.apache.juli.logging.DirectJDKLog log Initializing Spring DispatcherServlet 'dispatcherServlet' 
+12--06--2021 09:00:40 972 INFO org.springframework.web.servlet.FrameworkServlet initServletBean Initializing Servlet 'dispatcherServlet' 
+12--06--2021 09:00:40 979 INFO org.springframework.web.servlet.FrameworkServlet initServletBean Completed initialization in 6 ms 
+12--06--2021 09:01:06 109 INFO com.kundan.controller.StudentRestController saveStudent Entered into method with Student data to save 
+12--06--2021 09:01:06 111 INFO com.kundan.controller.StudentRestController saveStudent About to call save operation 
+12--06--2021 09:01:06 884 INFO org.hibernate.engine.jdbc.batch.internal.AbstractBatchImpl release HHH000010: On release of batch it still contained JDBC statements 
+12--06--2021 09:01:07 022 ERROR com.kundan.controller.StudentRestController saveStudent Unable to Save student: Probleam is: org.hibernate.TransientObjectException: object references an unsaved transient instance - save the transient instance before flushing: com.kundan.model.Address; nested exception is java.lang.IllegalStateException: org.hibernate.TransientObjectException: object references an unsaved transient instance - save the transient instance before flushing: com.kundan.model.Address 
+12--06--2021 09:01:07 068 INFO com.kundan.controller.StudentRestController saveStudent About to exit save method with Response  
+12--06--2021 09:58:25 179 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin shutdown Application shutdown requested. 
+12--06--2021 09:58:25 192 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport shutdown Shutting down ExecutorService 'applicationTaskExecutor' 
+12--06--2021 09:58:25 198 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean destroy Closing JPA EntityManagerFactory for persistence unit 'default' 
+12--06--2021 09:58:25 198 INFO org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl perform HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down' 
+12--06--2021 09:58:27 747 INFO com.zaxxer.hikari.HikariDataSource close HikariPool-1 - Shutdown initiated... 
+12--06--2021 09:58:27 762 INFO com.zaxxer.hikari.HikariDataSource close HikariPool-1 - Shutdown completed. 
+12--06--2021 10:00:21 099 INFO org.springframework.boot.StartupInfoLogger logStarting Starting ReStFullCurdOperationApplication using Java 15.0.2 on kundan-HP-Pavilion-15-NoteBook-PC with PID 9528 (/home/kundan/SpringBoot/ReST-Full-curdOperation/target/classes started by kundan in /home/kundan/SpringBoot/ReST-Full-curdOperation) 
+12--06--2021 10:00:21 102 DEBUG org.springframework.boot.StartupInfoLogger logStarting Running with Spring Boot v2.4.5, Spring v5.3.6 
+12--06--2021 10:00:21 102 INFO org.springframework.boot.SpringApplication logStartupProfileInfo No active profile set, falling back to default profiles: default 
+12--06--2021 10:00:22 135 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate multipleStoresDetected Multiple Spring Data modules found, entering strict repository configuration mode! 
+12--06--2021 10:00:22 137 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate registerRepositoriesIn Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+12--06--2021 10:00:22 246 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate registerRepositoriesIn Finished Spring Data repository scanning in 103 ms. Found 2 JPA repository interfaces. 
+12--06--2021 10:00:22 257 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate multipleStoresDetected Multiple Spring Data modules found, entering strict repository configuration mode! 
+12--06--2021 10:00:22 258 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate registerRepositoriesIn Bootstrapping Spring Data Redis repositories in DEFAULT mode. 
+12--06--2021 10:00:22 267 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport isStrictRepositoryCandidate Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.kundan.repository.AddressRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository. 
+12--06--2021 10:00:22 268 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport isStrictRepositoryCandidate Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.kundan.repository.StudentRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository. 
+12--06--2021 10:00:22 268 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate registerRepositoriesIn Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces. 
+12--06--2021 10:00:22 745 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer initialize Tomcat initialized with port(s): 9090 (http) 
+12--06--2021 10:00:22 753 INFO org.apache.juli.logging.DirectJDKLog log Starting service [Tomcat] 
+12--06--2021 10:00:22 753 INFO org.apache.juli.logging.DirectJDKLog log Starting Servlet engine: [Apache Tomcat/9.0.45] 
+12--06--2021 10:00:22 829 INFO org.apache.juli.logging.DirectJDKLog log Initializing Spring embedded WebApplicationContext 
+12--06--2021 10:00:22 829 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext prepareWebApplicationContext Root WebApplicationContext: initialization completed in 1678 ms 
+12--06--2021 10:00:23 252 INFO org.hibernate.jpa.internal.util.LogHelper logPersistenceUnitInformation HHH000204: Processing PersistenceUnitInfo [name: default] 
+12--06--2021 10:00:23 289 INFO org.hibernate.Version logVersion HHH000412: Hibernate ORM core version 5.4.30.Final 
+12--06--2021 10:00:23 391 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager <clinit> HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+12--06--2021 10:00:23 464 INFO com.zaxxer.hikari.HikariDataSource getConnection HikariPool-1 - Starting... 
+12--06--2021 10:00:23 775 INFO com.zaxxer.hikari.HikariDataSource getConnection HikariPool-1 - Start completed. 
+12--06--2021 10:00:23 787 INFO org.hibernate.dialect.Dialect <init> HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect 
+12--06--2021 10:00:29 955 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator initiateService HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+12--06--2021 10:00:29 981 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean buildNativeEntityManagerFactory Initialized JPA EntityManagerFactory for persistence unit 'default' 
+12--06--2021 10:00:30 398 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration openEntityManagerInViewInterceptor spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+12--06--2021 10:00:30 606 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver <init> Exposing 14 endpoint(s) beneath base path '/actuator' 
+12--06--2021 10:00:30 687 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping initHandlerMethods Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)] 
+12--06--2021 10:00:30 772 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport initialize Initializing ExecutorService 'applicationTaskExecutor' 
+12--06--2021 10:00:31 120 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer start Tomcat started on port(s): 9090 (http) with context path '' 
+12--06--2021 10:00:31 121 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper start Context refreshed 
+12--06--2021 10:00:31 131 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper start Found 1 custom documentation plugin(s) 
+12--06--2021 10:00:31 159 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner scan Scanning for api listing references 
+12--06--2021 10:00:31 277 INFO org.springframework.boot.StartupInfoLogger logStarted Started ReStFullCurdOperationApplication in 10.483 seconds (JVM running for 11.152) 
+12--06--2021 10:00:31 807 INFO org.apache.juli.logging.DirectJDKLog log Initializing Spring DispatcherServlet 'dispatcherServlet' 
+12--06--2021 10:00:31 807 INFO org.springframework.web.servlet.FrameworkServlet initServletBean Initializing Servlet 'dispatcherServlet' 
+12--06--2021 10:00:31 809 INFO org.springframework.web.servlet.FrameworkServlet initServletBean Completed initialization in 2 ms 
+12--06--2021 10:00:39 616 INFO com.kundan.controller.StudentRestController saveStudent Entered into method with Student data to save 
+12--06--2021 10:00:39 630 INFO com.kundan.controller.StudentRestController saveStudent About to call save operation 
+12--06--2021 10:00:39 942 INFO org.hibernate.engine.jdbc.batch.internal.AbstractBatchImpl release HHH000010: On release of batch it still contained JDBC statements 
+12--06--2021 10:00:39 968 ERROR com.kundan.controller.StudentRestController saveStudent Unable to Save student: Probleam is: org.hibernate.TransientObjectException: object references an unsaved transient instance - save the transient instance before flushing: com.kundan.model.Address; nested exception is java.lang.IllegalStateException: org.hibernate.TransientObjectException: object references an unsaved transient instance - save the transient instance before flushing: com.kundan.model.Address 
+12--06--2021 10:00:39 989 INFO com.kundan.controller.StudentRestController saveStudent About to exit save method with Response  
+12--06--2021 10:03:04 742 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin shutdown Application shutdown requested. 
+12--06--2021 10:03:04 760 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport shutdown Shutting down ExecutorService 'applicationTaskExecutor' 
+12--06--2021 10:03:04 763 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean destroy Closing JPA EntityManagerFactory for persistence unit 'default' 
+12--06--2021 10:03:04 765 INFO com.zaxxer.hikari.HikariDataSource close HikariPool-1 - Shutdown initiated... 
+12--06--2021 10:03:04 773 INFO com.zaxxer.hikari.HikariDataSource close HikariPool-1 - Shutdown completed. 
+12--06--2021 10:03:12 237 INFO org.springframework.boot.StartupInfoLogger logStarting Starting ReStFullCurdOperationApplication using Java 15.0.2 on kundan-HP-Pavilion-15-NoteBook-PC with PID 9742 (/home/kundan/SpringBoot/ReST-Full-curdOperation/target/classes started by kundan in /home/kundan/SpringBoot/ReST-Full-curdOperation) 
+12--06--2021 10:03:12 240 DEBUG org.springframework.boot.StartupInfoLogger logStarting Running with Spring Boot v2.4.5, Spring v5.3.6 
+12--06--2021 10:03:12 241 INFO org.springframework.boot.SpringApplication logStartupProfileInfo No active profile set, falling back to default profiles: default 
+12--06--2021 10:03:13 179 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate multipleStoresDetected Multiple Spring Data modules found, entering strict repository configuration mode! 
+12--06--2021 10:03:13 181 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate registerRepositoriesIn Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+12--06--2021 10:03:13 297 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate registerRepositoriesIn Finished Spring Data repository scanning in 109 ms. Found 2 JPA repository interfaces. 
+12--06--2021 10:03:13 310 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate multipleStoresDetected Multiple Spring Data modules found, entering strict repository configuration mode! 
+12--06--2021 10:03:13 311 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate registerRepositoriesIn Bootstrapping Spring Data Redis repositories in DEFAULT mode. 
+12--06--2021 10:03:13 323 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport isStrictRepositoryCandidate Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.kundan.repository.AddressRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository. 
+12--06--2021 10:03:13 324 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport isStrictRepositoryCandidate Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.kundan.repository.StudentRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository. 
+12--06--2021 10:03:13 325 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate registerRepositoriesIn Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces. 
+12--06--2021 10:03:13 847 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer initialize Tomcat initialized with port(s): 9090 (http) 
+12--06--2021 10:03:13 856 INFO org.apache.juli.logging.DirectJDKLog log Starting service [Tomcat] 
+12--06--2021 10:03:13 856 INFO org.apache.juli.logging.DirectJDKLog log Starting Servlet engine: [Apache Tomcat/9.0.45] 
+12--06--2021 10:03:13 938 INFO org.apache.juli.logging.DirectJDKLog log Initializing Spring embedded WebApplicationContext 
+12--06--2021 10:03:13 938 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext prepareWebApplicationContext Root WebApplicationContext: initialization completed in 1646 ms 
+12--06--2021 10:03:14 372 INFO org.hibernate.jpa.internal.util.LogHelper logPersistenceUnitInformation HHH000204: Processing PersistenceUnitInfo [name: default] 
+12--06--2021 10:03:14 407 INFO org.hibernate.Version logVersion HHH000412: Hibernate ORM core version 5.4.30.Final 
+12--06--2021 10:03:14 500 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager <clinit> HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+12--06--2021 10:03:14 569 INFO com.zaxxer.hikari.HikariDataSource getConnection HikariPool-1 - Starting... 
+12--06--2021 10:03:14 879 INFO com.zaxxer.hikari.HikariDataSource getConnection HikariPool-1 - Start completed. 
+12--06--2021 10:03:14 891 INFO org.hibernate.dialect.Dialect <init> HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect 
+12--06--2021 10:03:18 486 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator initiateService HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+12--06--2021 10:03:18 509 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean buildNativeEntityManagerFactory Initialized JPA EntityManagerFactory for persistence unit 'default' 
+12--06--2021 10:03:18 915 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration openEntityManagerInViewInterceptor spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+12--06--2021 10:03:19 120 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver <init> Exposing 14 endpoint(s) beneath base path '/actuator' 
+12--06--2021 10:03:19 193 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping initHandlerMethods Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)] 
+12--06--2021 10:03:19 282 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport initialize Initializing ExecutorService 'applicationTaskExecutor' 
+12--06--2021 10:03:19 596 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer start Tomcat started on port(s): 9090 (http) with context path '' 
+12--06--2021 10:03:19 597 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper start Context refreshed 
+12--06--2021 10:03:19 622 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper start Found 1 custom documentation plugin(s) 
+12--06--2021 10:03:19 653 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner scan Scanning for api listing references 
+12--06--2021 10:03:19 785 INFO org.springframework.boot.StartupInfoLogger logStarted Started ReStFullCurdOperationApplication in 7.903 seconds (JVM running for 8.588) 
+12--06--2021 10:03:21 076 INFO org.apache.juli.logging.DirectJDKLog log Initializing Spring DispatcherServlet 'dispatcherServlet' 
+12--06--2021 10:03:21 077 INFO org.springframework.web.servlet.FrameworkServlet initServletBean Initializing Servlet 'dispatcherServlet' 
+12--06--2021 10:03:21 078 INFO org.springframework.web.servlet.FrameworkServlet initServletBean Completed initialization in 1 ms 
+12--06--2021 10:03:28 329 INFO com.kundan.controller.StudentRestController saveStudent Entered into method with Student data to save 
+12--06--2021 10:03:28 329 INFO com.kundan.controller.StudentRestController saveStudent About to call save operation 
+12--06--2021 10:03:28 657 INFO org.hibernate.engine.jdbc.batch.internal.AbstractBatchImpl release HHH000010: On release of batch it still contained JDBC statements 
+12--06--2021 10:03:28 684 ERROR com.kundan.controller.StudentRestController saveStudent Unable to Save student: Probleam is: org.hibernate.TransientObjectException: object references an unsaved transient instance - save the transient instance before flushing: com.kundan.model.Address; nested exception is java.lang.IllegalStateException: org.hibernate.TransientObjectException: object references an unsaved transient instance - save the transient instance before flushing: com.kundan.model.Address 
+12--06--2021 10:03:28 707 INFO com.kundan.controller.StudentRestController saveStudent About to exit save method with Response  
+12--06--2021 10:05:45 768 INFO com.kundan.controller.StudentRestController saveStudent Entered into method with Student data to save 
+12--06--2021 10:05:45 770 INFO com.kundan.controller.StudentRestController saveStudent About to call save operation 
+12--06--2021 10:05:46 048 INFO org.hibernate.engine.jdbc.batch.internal.AbstractBatchImpl release HHH000010: On release of batch it still contained JDBC statements 
+12--06--2021 10:05:46 050 ERROR com.kundan.controller.StudentRestController saveStudent Unable to Save student: Probleam is: org.hibernate.TransientObjectException: object references an unsaved transient instance - save the transient instance before flushing: com.kundan.model.Address; nested exception is java.lang.IllegalStateException: org.hibernate.TransientObjectException: object references an unsaved transient instance - save the transient instance before flushing: com.kundan.model.Address 
+12--06--2021 10:05:46 056 INFO com.kundan.controller.StudentRestController saveStudent About to exit save method with Response  
+12--06--2021 10:22:12 277 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin shutdown Application shutdown requested. 
+12--06--2021 10:22:12 289 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport shutdown Shutting down ExecutorService 'applicationTaskExecutor' 
+12--06--2021 10:22:12 291 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean destroy Closing JPA EntityManagerFactory for persistence unit 'default' 
+12--06--2021 10:22:12 294 INFO com.zaxxer.hikari.HikariDataSource close HikariPool-1 - Shutdown initiated... 
+12--06--2021 10:22:12 300 INFO com.zaxxer.hikari.HikariDataSource close HikariPool-1 - Shutdown completed. 
+12--06--2021 10:22:20 785 INFO org.springframework.boot.StartupInfoLogger logStarting Starting ReStFullCurdOperationApplication using Java 15.0.2 on kundan-HP-Pavilion-15-NoteBook-PC with PID 10604 (/home/kundan/SpringBoot/ReST-Full-curdOperation/target/classes started by kundan in /home/kundan/SpringBoot/ReST-Full-curdOperation) 
+12--06--2021 10:22:20 789 DEBUG org.springframework.boot.StartupInfoLogger logStarting Running with Spring Boot v2.4.5, Spring v5.3.6 
+12--06--2021 10:22:20 789 INFO org.springframework.boot.SpringApplication logStartupProfileInfo No active profile set, falling back to default profiles: default 
+12--06--2021 10:22:21 802 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate multipleStoresDetected Multiple Spring Data modules found, entering strict repository configuration mode! 
+12--06--2021 10:22:21 804 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate registerRepositoriesIn Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+12--06--2021 10:22:21 919 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate registerRepositoriesIn Finished Spring Data repository scanning in 108 ms. Found 2 JPA repository interfaces. 
+12--06--2021 10:22:21 929 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate multipleStoresDetected Multiple Spring Data modules found, entering strict repository configuration mode! 
+12--06--2021 10:22:21 931 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate registerRepositoriesIn Bootstrapping Spring Data Redis repositories in DEFAULT mode. 
+12--06--2021 10:22:21 940 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport isStrictRepositoryCandidate Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.kundan.repository.AddressRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository. 
+12--06--2021 10:22:21 941 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport isStrictRepositoryCandidate Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.kundan.repository.StudentRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository. 
+12--06--2021 10:22:21 942 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate registerRepositoriesIn Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces. 
+12--06--2021 10:22:22 414 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer initialize Tomcat initialized with port(s): 9090 (http) 
+12--06--2021 10:22:22 422 INFO org.apache.juli.logging.DirectJDKLog log Starting service [Tomcat] 
+12--06--2021 10:22:22 422 INFO org.apache.juli.logging.DirectJDKLog log Starting Servlet engine: [Apache Tomcat/9.0.45] 
+12--06--2021 10:22:22 496 INFO org.apache.juli.logging.DirectJDKLog log Initializing Spring embedded WebApplicationContext 
+12--06--2021 10:22:22 497 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext prepareWebApplicationContext Root WebApplicationContext: initialization completed in 1653 ms 
+12--06--2021 10:22:22 940 INFO org.hibernate.jpa.internal.util.LogHelper logPersistenceUnitInformation HHH000204: Processing PersistenceUnitInfo [name: default] 
+12--06--2021 10:22:22 975 INFO org.hibernate.Version logVersion HHH000412: Hibernate ORM core version 5.4.30.Final 
+12--06--2021 10:22:23 080 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager <clinit> HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+12--06--2021 10:22:23 154 INFO com.zaxxer.hikari.HikariDataSource getConnection HikariPool-1 - Starting... 
+12--06--2021 10:22:23 483 INFO com.zaxxer.hikari.HikariDataSource getConnection HikariPool-1 - Start completed. 
+12--06--2021 10:22:23 496 INFO org.hibernate.dialect.Dialect <init> HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect 
+12--06--2021 10:22:24 019 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator initiateService HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+12--06--2021 10:22:24 025 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean buildNativeEntityManagerFactory Initialized JPA EntityManagerFactory for persistence unit 'default' 
+12--06--2021 10:22:24 417 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration openEntityManagerInViewInterceptor spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+12--06--2021 10:22:24 626 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver <init> Exposing 14 endpoint(s) beneath base path '/actuator' 
+12--06--2021 10:22:24 700 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping initHandlerMethods Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)] 
+12--06--2021 10:22:24 790 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport initialize Initializing ExecutorService 'applicationTaskExecutor' 
+12--06--2021 10:22:25 139 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer start Tomcat started on port(s): 9090 (http) with context path '' 
+12--06--2021 10:22:25 140 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper start Context refreshed 
+12--06--2021 10:22:25 151 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper start Found 1 custom documentation plugin(s) 
+12--06--2021 10:22:25 180 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner scan Scanning for api listing references 
+12--06--2021 10:22:25 320 INFO org.springframework.boot.StartupInfoLogger logStarted Started ReStFullCurdOperationApplication in 4.857 seconds (JVM running for 5.551) 
+12--06--2021 10:22:26 180 INFO org.apache.juli.logging.DirectJDKLog log Initializing Spring DispatcherServlet 'dispatcherServlet' 
+12--06--2021 10:22:26 180 INFO org.springframework.web.servlet.FrameworkServlet initServletBean Initializing Servlet 'dispatcherServlet' 
+12--06--2021 10:22:26 182 INFO org.springframework.web.servlet.FrameworkServlet initServletBean Completed initialization in 1 ms 
+12--06--2021 10:22:32 961 INFO com.kundan.controller.StudentRestController saveStudent Entered into method with Student data to save 
+12--06--2021 10:22:32 962 INFO com.kundan.controller.StudentRestController saveStudent About to call save operation 
+12--06--2021 10:22:34 039 DEBUG com.kundan.controller.StudentRestController saveStudent Student saved with id:4 
+12--06--2021 10:22:34 046 INFO com.kundan.controller.StudentRestController saveStudent Success Response Constructed 
+12--06--2021 10:22:34 048 INFO com.kundan.controller.StudentRestController saveStudent About to exit save method with Response  
+12--06--2021 10:24:53 517 INFO com.kundan.controller.StudentRestController getAllStudents Entered into method to fetch Student data 
+12--06--2021 10:24:53 518 INFO com.kundan.controller.StudentRestController getAllStudents About to call fetch StudentService 
+12--06--2021 10:24:53 858 INFO com.kundan.controller.StudentRestController getAllStudents Data is not Empty=>1 
+12--06--2021 10:24:53 859 INFO com.kundan.controller.StudentRestController getAllStudents About to exit fetch all method with Response 
+12--06--2021 12:40:52 145 INFO org.springframework.boot.StartupInfoLogger logStarting Starting ReStFullCurdOperationApplication using Java 15.0.2 on kundan-HP-Pavilion-15-NoteBook-PC with PID 13615 (/home/kundan/SpringBoot/ReST-Full-curdOperation/target/classes started by kundan in /home/kundan/SpringBoot/ReST-Full-curdOperation) 
+12--06--2021 12:40:52 148 DEBUG org.springframework.boot.StartupInfoLogger logStarting Running with Spring Boot v2.4.5, Spring v5.3.6 
+12--06--2021 12:40:52 149 INFO org.springframework.boot.SpringApplication logStartupProfileInfo No active profile set, falling back to default profiles: default 
+12--06--2021 12:40:53 309 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate multipleStoresDetected Multiple Spring Data modules found, entering strict repository configuration mode! 
+12--06--2021 12:40:53 311 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate registerRepositoriesIn Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+12--06--2021 12:40:53 443 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate registerRepositoriesIn Finished Spring Data repository scanning in 123 ms. Found 2 JPA repository interfaces. 
+12--06--2021 12:40:53 457 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate multipleStoresDetected Multiple Spring Data modules found, entering strict repository configuration mode! 
+12--06--2021 12:40:53 458 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate registerRepositoriesIn Bootstrapping Spring Data Redis repositories in DEFAULT mode. 
+12--06--2021 12:40:53 470 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport isStrictRepositoryCandidate Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.kundan.repository.AddressRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository. 
+12--06--2021 12:40:53 471 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport isStrictRepositoryCandidate Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.kundan.repository.StudentRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository. 
+12--06--2021 12:40:53 472 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate registerRepositoriesIn Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces. 
+12--06--2021 12:40:53 990 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer initialize Tomcat initialized with port(s): 9090 (http) 
+12--06--2021 12:40:54 001 INFO org.apache.juli.logging.DirectJDKLog log Starting service [Tomcat] 
+12--06--2021 12:40:54 001 INFO org.apache.juli.logging.DirectJDKLog log Starting Servlet engine: [Apache Tomcat/9.0.45] 
+12--06--2021 12:40:54 178 INFO org.apache.juli.logging.DirectJDKLog log Initializing Spring embedded WebApplicationContext 
+12--06--2021 12:40:54 179 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext prepareWebApplicationContext Root WebApplicationContext: initialization completed in 1984 ms 
+12--06--2021 12:40:54 669 INFO org.hibernate.jpa.internal.util.LogHelper logPersistenceUnitInformation HHH000204: Processing PersistenceUnitInfo [name: default] 
+12--06--2021 12:40:54 710 INFO org.hibernate.Version logVersion HHH000412: Hibernate ORM core version 5.4.30.Final 
+12--06--2021 12:40:54 816 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager <clinit> HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+12--06--2021 12:40:54 906 INFO com.zaxxer.hikari.HikariDataSource getConnection HikariPool-1 - Starting... 
+12--06--2021 12:40:55 347 INFO com.zaxxer.hikari.HikariDataSource getConnection HikariPool-1 - Start completed. 
+12--06--2021 12:40:55 362 INFO org.hibernate.dialect.Dialect <init> HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect 
+12--06--2021 12:41:02 130 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator initiateService HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+12--06--2021 12:41:02 152 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean buildNativeEntityManagerFactory Initialized JPA EntityManagerFactory for persistence unit 'default' 
+12--06--2021 12:41:02 616 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration openEntityManagerInViewInterceptor spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+12--06--2021 12:41:02 848 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver <init> Exposing 14 endpoint(s) beneath base path '/actuator' 
+12--06--2021 12:41:02 926 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping initHandlerMethods Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)] 
+12--06--2021 12:41:03 034 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport initialize Initializing ExecutorService 'applicationTaskExecutor' 
+12--06--2021 12:41:03 432 WARN org.springframework.context.support.AbstractApplicationContext refresh Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 9090 is already in use 
+12--06--2021 12:41:03 435 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport shutdown Shutting down ExecutorService 'applicationTaskExecutor' 
+12--06--2021 12:41:03 438 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean destroy Closing JPA EntityManagerFactory for persistence unit 'default' 
+12--06--2021 12:41:03 438 INFO org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl perform HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down' 
+12--06--2021 12:41:05 677 INFO com.zaxxer.hikari.HikariDataSource close HikariPool-1 - Shutdown initiated... 
+12--06--2021 12:41:05 698 INFO com.zaxxer.hikari.HikariDataSource close HikariPool-1 - Shutdown completed. 
+12--06--2021 12:41:05 712 INFO org.apache.juli.logging.DirectJDKLog log Stopping service [Tomcat] 
+12--06--2021 12:41:05 730 INFO org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener logMessage 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled. 
+12--06--2021 12:41:06 069 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter report 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 9090 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 9090 or configure this application to listen on another port.
+ 
+12--06--2021 12:41:14 816 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin shutdown Application shutdown requested. 
+12--06--2021 12:41:14 838 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport shutdown Shutting down ExecutorService 'applicationTaskExecutor' 
+12--06--2021 12:41:14 841 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean destroy Closing JPA EntityManagerFactory for persistence unit 'default' 
+12--06--2021 12:41:14 843 INFO com.zaxxer.hikari.HikariDataSource close HikariPool-1 - Shutdown initiated... 
+12--06--2021 12:41:14 848 INFO com.zaxxer.hikari.HikariDataSource close HikariPool-1 - Shutdown completed. 
+12--06--2021 12:41:29 581 INFO org.springframework.boot.StartupInfoLogger logStarting Starting ReStFullCurdOperationApplication using Java 15.0.2 on kundan-HP-Pavilion-15-NoteBook-PC with PID 13699 (/home/kundan/SpringBoot/ReST-Full-curdOperation/target/classes started by kundan in /home/kundan/SpringBoot/ReST-Full-curdOperation) 
+12--06--2021 12:41:29 583 DEBUG org.springframework.boot.StartupInfoLogger logStarting Running with Spring Boot v2.4.5, Spring v5.3.6 
+12--06--2021 12:41:29 584 INFO org.springframework.boot.SpringApplication logStartupProfileInfo No active profile set, falling back to default profiles: default 
+12--06--2021 12:41:30 636 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate multipleStoresDetected Multiple Spring Data modules found, entering strict repository configuration mode! 
+12--06--2021 12:41:30 638 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate registerRepositoriesIn Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+12--06--2021 12:41:30 772 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate registerRepositoriesIn Finished Spring Data repository scanning in 127 ms. Found 2 JPA repository interfaces. 
+12--06--2021 12:41:30 785 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate multipleStoresDetected Multiple Spring Data modules found, entering strict repository configuration mode! 
+12--06--2021 12:41:30 787 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate registerRepositoriesIn Bootstrapping Spring Data Redis repositories in DEFAULT mode. 
+12--06--2021 12:41:30 800 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport isStrictRepositoryCandidate Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.kundan.repository.AddressRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository. 
+12--06--2021 12:41:30 801 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport isStrictRepositoryCandidate Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.kundan.repository.StudentRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository. 
+12--06--2021 12:41:30 801 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate registerRepositoriesIn Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces. 
+12--06--2021 12:41:31 314 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer initialize Tomcat initialized with port(s): 9090 (http) 
+12--06--2021 12:41:31 322 INFO org.apache.juli.logging.DirectJDKLog log Starting service [Tomcat] 
+12--06--2021 12:41:31 323 INFO org.apache.juli.logging.DirectJDKLog log Starting Servlet engine: [Apache Tomcat/9.0.45] 
+12--06--2021 12:41:31 424 INFO org.apache.juli.logging.DirectJDKLog log Initializing Spring embedded WebApplicationContext 
+12--06--2021 12:41:31 424 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext prepareWebApplicationContext Root WebApplicationContext: initialization completed in 1793 ms 
+12--06--2021 12:41:31 922 INFO org.hibernate.jpa.internal.util.LogHelper logPersistenceUnitInformation HHH000204: Processing PersistenceUnitInfo [name: default] 
+12--06--2021 12:41:31 959 INFO org.hibernate.Version logVersion HHH000412: Hibernate ORM core version 5.4.30.Final 
+12--06--2021 12:41:32 062 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager <clinit> HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+12--06--2021 12:41:32 148 INFO com.zaxxer.hikari.HikariDataSource getConnection HikariPool-1 - Starting... 
+12--06--2021 12:41:32 464 INFO com.zaxxer.hikari.HikariDataSource getConnection HikariPool-1 - Start completed. 
+12--06--2021 12:41:32 476 INFO org.hibernate.dialect.Dialect <init> HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect 
+12--06--2021 12:41:33 188 WARN org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl handleException GenerationTarget encountered exception accepting command : Error executing DDL "alter table address drop foreign key FKg6qcywqtp08ksr5r9lpv16g1k" via JDBC Statement 
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table address drop foreign key FKg6qcywqtp08ksr5r9lpv16g1k" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:359)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:331)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:230)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:154)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:126)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:112)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:145)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:318)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:468)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1845)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:782)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:774)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:339)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1340)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329)
+	at com.kundan.ReStFullCurdOperationApplication.main(ReStFullCurdOperationApplication.java:12)
+Caused by: java.sql.SQLSyntaxErrorException: Table 'student_app.address' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:762)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:646)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 36 common frames omitted
+12--06--2021 12:41:37 970 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator initiateService HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+12--06--2021 12:41:37 986 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean buildNativeEntityManagerFactory Initialized JPA EntityManagerFactory for persistence unit 'default' 
+12--06--2021 12:41:38 463 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration openEntityManagerInViewInterceptor spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+12--06--2021 12:41:38 710 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver <init> Exposing 14 endpoint(s) beneath base path '/actuator' 
+12--06--2021 12:41:38 789 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping initHandlerMethods Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)] 
+12--06--2021 12:41:38 883 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport initialize Initializing ExecutorService 'applicationTaskExecutor' 
+12--06--2021 12:41:39 261 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer start Tomcat started on port(s): 9090 (http) with context path '' 
+12--06--2021 12:41:39 263 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper start Context refreshed 
+12--06--2021 12:41:39 274 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper start Found 1 custom documentation plugin(s) 
+12--06--2021 12:41:39 306 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner scan Scanning for api listing references 
+12--06--2021 12:41:39 440 INFO org.springframework.boot.StartupInfoLogger logStarted Started ReStFullCurdOperationApplication in 10.237 seconds (JVM running for 11.029) 
+12--06--2021 12:41:41 313 INFO org.apache.juli.logging.DirectJDKLog log Initializing Spring DispatcherServlet 'dispatcherServlet' 
+12--06--2021 12:41:41 313 INFO org.springframework.web.servlet.FrameworkServlet initServletBean Initializing Servlet 'dispatcherServlet' 
+12--06--2021 12:41:41 315 INFO org.springframework.web.servlet.FrameworkServlet initServletBean Completed initialization in 2 ms 
+12--06--2021 12:42:13 874 INFO com.kundan.controller.StudentRestController saveStudent Entered into method with Student data to save 
+12--06--2021 12:42:13 875 INFO com.kundan.controller.StudentRestController saveStudent About to call save operation 
+12--06--2021 12:42:14 237 DEBUG com.kundan.controller.StudentRestController saveStudent Student saved with id:1 
+12--06--2021 12:42:14 238 INFO com.kundan.controller.StudentRestController saveStudent Success Response Constructed 
+12--06--2021 12:42:14 239 INFO com.kundan.controller.StudentRestController saveStudent About to exit save method with Response  
+12--06--2021 12:42:27 147 INFO com.kundan.controller.StudentRestController getAllStudents Entered into method to fetch Student data 
+12--06--2021 12:42:27 147 INFO com.kundan.controller.StudentRestController getAllStudents About to call fetch StudentService 
+12--06--2021 12:42:27 489 INFO com.kundan.controller.StudentRestController getAllStudents Data is not Empty=>1 
+12--06--2021 12:42:27 490 INFO com.kundan.controller.StudentRestController getAllStudents About to exit fetch all method with Response 
+12--06--2021 02:10:33 561 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin shutdown Application shutdown requested. 
+12--06--2021 02:10:33 610 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport shutdown Shutting down ExecutorService 'applicationTaskExecutor' 
+12--06--2021 02:10:33 613 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean destroy Closing JPA EntityManagerFactory for persistence unit 'default' 
+12--06--2021 02:10:33 613 INFO org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl perform HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down' 
+12--06--2021 02:10:35 968 INFO com.zaxxer.hikari.HikariDataSource close HikariPool-1 - Shutdown initiated... 
+12--06--2021 02:10:35 981 INFO com.zaxxer.hikari.HikariDataSource close HikariPool-1 - Shutdown completed. 
